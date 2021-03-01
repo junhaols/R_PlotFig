@@ -14,7 +14,7 @@ data2=data.frame(data1)
 
 x3=1.5*x1+0.5
 #s_fitScatter(x1,x2,'x1','x2','tets')
-s_fitScatter2(x1,y1,x3,y2,'x','y','test','/Users/Junhao/data/Project/LJHProject/CommonCode/R/R_PlotFig/test','test8.png')
+s_fitScatter2(x1,y1,x3,y2,'x','y','test','/Users/Junhao/data/Project/LJHProject/CommonCode/R/R_PlotFig/test','test9.png')
 
 # ggplot(data2,aes(x=x1)) +
 # geom_line(aes(y = y1), color = "darkred") +
