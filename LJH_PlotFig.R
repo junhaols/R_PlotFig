@@ -53,7 +53,7 @@ s_fitScatter<-function(x,y,xlabel,ylabel,head_title,savepath=NULL,fig_name=NULL)
    }
  }
 ################################################################################
-## function2:
+## function2:Scatters to plot and fit(2 lines)
 s_fitScatter2<-function(x1,y1,x2,y2,xlabel,ylabel,head_title,savepath=NULL,fig_name=NULL){
   
   data1=cbind(x1,x2,y1,y2)
