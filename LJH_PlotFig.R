@@ -92,5 +92,6 @@ s_fitScatter2<-function(x1,y1,x2,y2,xlabel,ylabel,head_title,savepath=NULL,fig_n
 }      
     
 
-  
+## function3:to be continued.
+
   
