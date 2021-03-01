@@ -54,7 +54,39 @@ s_fitScatter<-function(x,y,xlabel,ylabel,head_title,savepath=NULL,fig_name=NULL)
  }
 ################################################################################
 ## function2:
-      
+s_fitScatter2<-function(x1,y1,x2,y2,xlabel,ylabel,head_title,savepath=NULL,fig_name=NULL){
+  
+  data1=cbind(x1,x2,y1,y2)
+  data_input=data.frame(data1)
+  gcf=ggplot(data_input) + 
+    geom_jitter(aes(x1,y1), colour="black",size=0.8) + geom_smooth(aes(x1,y1), method=lm, se=FALSE,color='red',size=0.8) +
+    geom_jitter(aes(x2,y2), colour="black",size=0.8) + geom_smooth(aes(x2,y2), method=lm, se=FALSE,color='blue',size=0.8) +
+    xlab(xlabel)+ylab(ylabel)+ggtitle(head_title)
+  #gcf1=gcf + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                   #panel.background = element_blank(), axis.line = element_line(colour = "black"))
+  
+  gcf1=gcf+theme_classic() + 
+    theme(axis.ticks.length.y = unit(-0.15, 'cm'),
+          axis.text.y = element_text(margin = unit(c(0.5, 0.5, 0.5, 0.5), 'cm'))) +  #修改y轴刻度朝内
+          theme(axis.line = element_line(arrow = arrow(length = unit(0.5, 'cm'))))  #坐标轴尾端为箭头
+  gcf2=gcf1 + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                   panel.background = element_blank(), axis.line = element_line(colour = "black"))+theme(plot.title = element_text(hjust = 0.5))
+  
+  ## view and save
+  if(is.null(fig_name)){
+    print('The fig will not be saved.')
+    # view the figure
+    gcf2
+  } else
+  {
+    print('The fig will be saved.')
+    print(savepath)
+    pic_name=file.path(savepath,fig_name)
+    ggsave(pic_name)
+    # view the figure
+    gcf2
+  }
+}      
     
   
 ## function3:
